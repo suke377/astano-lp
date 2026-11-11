@@ -1,5 +1,5 @@
 // User-confirmed operating policies. Legal validity and external-system readiness remain unconfirmed.
-export const identity = {operator:'宮 雄輔',trainer:'Miya',role:'代表兼トレーナー',experience:'指導歴2年、身体づくり4年。100名以上の指導に関与してきました。'};
+export const identity = {operator:'宮 雄輔',trainer:'宮雄輔',role:'代表兼トレーナー',experience:'指導歴2年、身体づくり4年。100名以上の指導に関与してきました。'};
 export const paymentTerms = {
  method:'お支払いは銀行振込です。一括払い・分割払いに対応し、ライト・スタンダードは最大4回、プレミアムは最大6回までお選びいただけます。分割による総額の変更はありません。振込手数料はお客様負担です。',
  due:'分割金額と各支払期限は契約書に明記します。2回目以降は実際のサービス開始日と同じ日付を毎月の基準とし、その日付がない月は翌月1日を期限とします。銀行休業日は翌銀行営業日を期限とします。開始日を変更した場合は期限も再設定し、通知・記録します。',
