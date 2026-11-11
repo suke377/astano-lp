@@ -1,0 +1,10 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App';
+import { Footer, Header } from './components';
+import { legalPages } from './legal';
+import './style.css';
+const file=location.pathname.split('/').pop() || 'index.html';
+const legal=legalPages[file];
+if(legal) document.title=`${legal.title}｜あすたの`;
+createRoot(document.getElementById('root')!).render(<StrictMode>{legal?<><Header/><main className="legal shell"><p className="eyebrow">DOCUMENT</p><h1>{legal.title}</h1><aside className="legal-warning">このページはサービスのご案内です。LPの閲覧やLINE友だち追加で有料契約は成立しません。有料契約の受付は、必要な法令確認・契約手続きの整備後に開始します。</aside>{legal.sections.map(s=><section key={s.title}><h2>{s.title}</h2><p>{s.text}</p></section>)}<a className="text-link" href="./index.html">← 紹介ページへ戻る</a></main><Footer/></>:<App review={import.meta.env.DEV}/>}</StrictMode>);

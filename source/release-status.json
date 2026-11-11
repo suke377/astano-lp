@@ -1,0 +1,11 @@
+{
+  "designApproved": true,
+  "userApproved": true,
+  "imagesApproved": true,
+  "legalApproved": false,
+  "paymentConfirmed": true,
+  "lineAutomationTested": false,
+  "browserQaPassed": true,
+  "siteBaseConfirmed": true,
+  "businessDisclosureReviewed": true
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env*
+!.env.example
+.DS_Store
+archive/
+画像素材/
+docs/商談用メモ.md
+納品/
