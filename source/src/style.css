@@ -144,3 +144,26 @@ p,li,summary{word-break:normal;overflow-wrap:break-word;line-break:strict;text-w
  .customer-case .case-details{gap:12px}
  .customer-case .case-details ul{font-size:12px;line-height:1.65}
 }
+
+/* Desktop pairs share content rows, keeping card edges and section starts aligned. */
+@media(min-width:741px){
+ .customer-cases{align-items:stretch}
+ @supports(grid-template-rows:subgrid){
+  .customer-cases{row-gap:14px}
+  .customer-cases>.customer-case{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:subgrid;grid-row:span 6;column-gap:14px;row-gap:14px}
+  .customer-cases>.customer-case:not(.photo-case){grid-row:span 5}
+  .customer-case .case-panel,.customer-case .case-details{display:contents}
+  .customer-case .case-heading{grid-column:1/-1;grid-row:1;margin:0}
+  .customer-case .case-photo-feature{grid-column:1/-1;grid-row:2;margin:0}
+  .customer-case .case-profile{grid-column:1/-1;grid-row:3}
+  .customer-case .case-results{grid-column:1/-1;grid-row:4}
+  .customer-case .case-details section:nth-child(-n+2){grid-row:5}
+  .customer-case .case-details section:nth-child(n+3){grid-row:6}
+  .customer-case .case-details section:nth-child(odd){grid-column:1}
+  .customer-case .case-details section:nth-child(even){grid-column:2}
+  .customer-case:not(.photo-case) .case-profile{grid-row:2}
+  .customer-case:not(.photo-case) .case-results{grid-row:3}
+  .customer-case:not(.photo-case) .case-details section:nth-child(-n+2){grid-row:4}
+  .customer-case:not(.photo-case) .case-details section:nth-child(n+3){grid-row:5}
+ }
+}
