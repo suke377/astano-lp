@@ -94,3 +94,12 @@ p,li,summary{word-break:normal;overflow-wrap:break-word;line-break:strict;text-w
 .plan-price span{font-family:inherit;font-size:11px;font-weight:400;letter-spacing:0;margin-left:5px}
 @media(min-width:741px) and (max-width:900px){.plan-price,.plan:last-child .plan-price{font-size:28px}.plan-price span{font-size:10px;margin-left:3px}}
 @media(max-width:740px){.plan-price,.plan:last-child .plan-price{font-size:34px}.plan-price span{font-size:12px}}
+
+/* Keep section headings in intentional Japanese phrases, including iOS Safari. */
+.section-heading h2{overflow-wrap:normal;word-break:normal}
+.heading-line{display:inline;white-space:normal}
+@media(max-width:740px){
+ .section-heading h2{font-size:clamp(18px,5.5vw,24px);line-height:1.65;letter-spacing:.025em}
+ .section-heading h2{text-wrap:wrap}
+ .section-heading .heading-line{display:block;white-space:nowrap}
+}
