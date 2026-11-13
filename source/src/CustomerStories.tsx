@@ -9,4 +9,16 @@ const stories:Story[]=[
 function Leaves(){return <svg className="case-leaves" viewBox="0 0 180 100" aria-hidden="true"><path d="M0 5Q65 5 130 90" fill="none" stroke="#91a66c" strokeWidth="2"/>{[[15,12,-30],[40,23,20],[68,40,-20],[93,65,30]].map(([x,y,a])=><g key={x} transform={`translate(${x} ${y}) rotate(${a})`}><ellipse cx="0" cy="-10" rx="9" ry="20" fill="#a8bb73"/><ellipse cx="20" cy="8" rx="18" ry="8" fill="#b6c689"/></g>)}</svg>}
 function Crop({file,view,label}:{file:string;view:string;label:string}){return <svg viewBox={view} role="img" aria-label={label}><image href={base+file} width="1536" height="1024"/></svg>}
 function PhotoPair({story:s}:{story:Story}){return <div className="case-photo-pair"><figure><Crop file={s.file} view={s.before!} label={`${s.name} Before`}/><figcaption>Before</figcaption></figure><figure><Crop file={s.file} view={s.after!} label={`${s.name} After`}/><figcaption>After</figcaption></figure></div>}
-export default function CustomerStories(){return <div className="customer-cases">{stories.map(s=><article className={`customer-case ${s.portrait?'':'photo-case'}`} key={s.name} aria-label={`${s.name}の事例`}><Leaves/><header className="case-heading"><p>CUSTOMER VOICE</p><h3>お客様の実績・変化の声</h3><p>実際に取り組まれた方の変化をご紹介します</p></header>{!s.portrait&&<div className="case-photo-feature"><PhotoPair story={s}/></div>}<div className="case-panel"><div className="case-profile">{s.portrait&&<div className="case-portrait silhouette"><Crop file={s.file} view={s.portrait} label={`${s.name}のシルエット`}/></div>}<h4 className="case-name">{s.person}<span>{s.name}<small>（{s.job}）</small></span></h4><span className="case-result-label">結果</span><p className="case-period">{s.period}で</p><dl className="case-results"><div><dt>体重</dt><dd>{s.weight}<small>kg</small></dd></div><div><dt>ウエスト</dt><dd>{s.waist}<small>cm</small></dd></div></dl></div><div className="case-details">{s.groups.map(([label,items],i)=><section key={label}><h4 className={i<2?'gold':'green'}>{label}</h4><ul>{items.map(text=><li key={text}>{text}</li>)}</ul></section>)}</div></div></article>)}</div>}
+export default function CustomerStories(){return <div className="customer-cases">{stories.map(s=><article className={`customer-case ${s.portrait?'':'photo-case'}`} key={s.name} aria-label={`${s.name}の事例`}>
+ <Leaves/>
+ <header className="case-heading"><p>CUSTOMER VOICE</p><h3>お客様の実績・変化の声</h3><p>実際に取り組まれた方の変化をご紹介します</p></header>
+ {!s.portrait&&<div className="case-photo-feature"><PhotoPair story={s}/></div>}
+ <div className="case-panel">
+  <div className="case-profile">
+   <div className="case-identity">{s.portrait&&<div className="case-portrait silhouette"><Crop file={s.file} view={s.portrait} label={`${s.name}のシルエット`}/></div>}<h4 className="case-name">{s.person}<span>{s.name}<small>（{s.job}）</small></span></h4></div>
+   <p className="case-period">{s.period}の変化</p>
+  </div>
+  <dl className="case-results"><div><dt>体重</dt><dd>{s.weight}<small>kg</small></dd></div><div><dt>ウエスト</dt><dd>{s.waist}<small>cm</small></dd></div></dl>
+  <div className="case-details">{s.groups.map(([label,items],i)=><section key={label}><h4 className={i<2?'gold':'green'}>{label}</h4><ul>{items.map(text=><li key={text}>{text}</li>)}</ul></section>)}</div>
+ </div>
+ </article>)}</div>}

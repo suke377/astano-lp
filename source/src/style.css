@@ -103,3 +103,44 @@ p,li,summary{word-break:normal;overflow-wrap:break-word;line-break:strict;text-w
  .section-heading h2{text-wrap:wrap}
  .section-heading .heading-line{display:block;white-space:nowrap}
 }
+
+/* Compact story cards: photo, identity, paired results, then a concise 2 × 2 story. */
+.customer-cases{align-items:start;gap:24px}
+.customer-case{padding:20px;background:#fffdf8;border:1px solid #e0e4d7;border-radius:16px;box-shadow:0 5px 20px #40543a06}
+.customer-case:after{display:none}
+.customer-case .case-heading{margin-bottom:14px}
+.customer-case .case-heading h3{font-size:19px;margin:5px 0;letter-spacing:.02em}
+.customer-case .case-heading>p:last-child{font-family:inherit;font-size:10px;line-height:1.6;letter-spacing:0}
+.customer-case .case-leaves{opacity:.45}
+.customer-case .case-photo-feature{padding:0;margin-bottom:14px}
+.customer-case .case-photo-pair{gap:10px}
+.customer-case .case-photo-pair svg{border-radius:9px}
+.customer-case .case-photo-pair figcaption{font-size:10px;line-height:1.5;padding:2px 8px;margin-top:5px;border-radius:5px}
+.customer-case .case-panel{display:flex;flex-direction:column;gap:14px;padding:0;border:0;border-radius:0;background:transparent}
+.customer-case .case-profile{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:0;border:0;text-align:left}
+.case-identity{display:flex;align-items:center;gap:10px;min-width:0}
+.customer-case .case-portrait{width:46px;height:52px;margin:0;flex:none}
+.customer-case .case-name{font-family:inherit;font-size:11px;line-height:1.6;margin:0;color:#66715e}
+.customer-case .case-name span{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:19px;color:var(--ink);line-height:1.5}
+.customer-case .case-name small{font-family:inherit;font-size:10px;white-space:nowrap}
+.customer-case .case-period{font-family:inherit;font-size:11px;line-height:1.5;margin:0;padding:5px 9px;border-radius:20px;background:#edf1e6;color:#526747;white-space:nowrap}
+.customer-case .case-results{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.customer-case .case-results>div{text-align:center;padding:9px 6px 8px;background:#eef3e5;border:0;border-radius:9px}
+.customer-case .case-results dt{font-family:inherit;font-size:10px;color:#617052}
+.customer-case .case-results dd{font-size:32px;line-height:1.15;margin-top:3px;font-weight:500;letter-spacing:-.03em;color:#4d6b35}
+.customer-case .case-results dd small{font-size:12px;margin-left:3px;letter-spacing:0}
+.customer-case .case-details{display:grid;width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px}
+.customer-case .case-details section,.customer-case .case-details section+section{margin:0;padding:0;border:0;min-width:0}
+.customer-case .case-details h4{font-family:inherit;font-size:11px;line-height:1.5;padding:0;border-radius:0;background:transparent;color:#677850;font-weight:500;letter-spacing:0;text-wrap:wrap}
+.customer-case .case-details section:last-child h4{color:#405f37}
+.customer-case .case-details ul{font-family:inherit;font-size:12px;line-height:1.7;list-style:none;padding-left:0;margin-top:5px;color:#485144;text-wrap:pretty}
+.customer-case .case-details li+li{margin-top:4px}
+@media(max-width:740px){
+ .customer-case{padding:16px;border-radius:13px}
+ .customer-case .case-heading h3{font-size:18px}
+ .customer-case .case-heading>p:last-child{font-size:9px}
+ .customer-case .case-panel{gap:12px}
+ .customer-case .case-results dd{font-size:30px}
+ .customer-case .case-details{gap:12px}
+ .customer-case .case-details ul{font-size:12px;line-height:1.65}
+}
