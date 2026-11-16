@@ -1,12 +1,14 @@
 import { identity, paymentTerms, counselingTerms, cancellationTerms } from './serviceTerms';
 export const LINE_URL = 'https://lin.ee/Pryz2Gq';
 export const enrollmentFee = 11000;
+export const commonPlanFeatures = ['LINEチャット相談対応','会員サイト「あすたの」の利用'];
 export const plans = [
- {id:'light',name:'ライト',months:4,price:120000,recommended:false,subtitle:'食事から、習慣を整えたい方へ。',features:['管理栄養士による食事サポート','毎日の食事フィードバック','食事に関するチャット相談','会員サイト利用'],note:'Zoomセッションは含まれません。'},
- {id:'standard',name:'スタンダード',months:4,price:198000,recommended:true,subtitle:'食事も運動も、一緒に進めたい方へ。',features:['週1回45分のZoomセッション／全16回','食事・運動・生活習慣の個別サポート','LINE相談','会員サイト利用'],note:'毎日の食事フィードバックは含まれません。'},
- {id:'premium',name:'プレミアム',months:6,price:340000,recommended:false,subtitle:'時間をかけて、丁寧に取り組みたい方へ。',features:['週1回45分のZoomセッション／全24回','毎日の食事フィードバック','食事・運動・生活習慣の個別サポート','LINE相談','会員サイト利用'],note:'詳しい内容は無料カウンセリングでご案内します。'}
+ {id:'food',name:'食事改善',months:3,price:60000,zoomSessions:8,recommended:false,subtitle:'食事から、習慣を整えたい方へ。',zoomSummary:'15分Zoom／全8回',schedule:'初月は週1回（4回）。2・3か月目は隔週（各2回）。',features:['15分のZoomサポート／全8回',...commonPlanFeatures],note:'初月は週1回（4回）、2・3か月目は隔週（各2回）。'},
+ {id:'exercise',name:'運動改善',months:3,price:98000,zoomSessions:12,recommended:false,subtitle:'自分に合った運動を、習慣にしたい方へ。',zoomSummary:'30分Zoom／週1回・全12回',schedule:'30分のZoomを週1回、全12回実施します。',features:['週1回30分のZoomサポート／全12回',...commonPlanFeatures],note:'現在の体力や運動経験に合わせてサポートします。'},
+ {id:'total',name:'トータル',months:3,price:128000,zoomSessions:12,recommended:false,subtitle:'食事も運動も、まとめて整えたい方へ。',zoomSummary:'30分・45分Zoom／週1回・全12回',schedule:'初月は45分Zoomを週1回。2・3か月目は週1回、30分と45分を交互に実施します（各時間は隔週）。',features:['週1回のZoomサポート／全12回',...commonPlanFeatures],note:'初月は45分。2・3か月目は30分と45分を週ごとに交互に実施。'},
+ {id:'premium',name:'プレミアム',months:4,price:178000,zoomSessions:16,recommended:false,subtitle:'時間をかけて、丁寧に取り組みたい方へ。',zoomSummary:'30分・45分Zoom／週1回・全16回',schedule:'初月は45分Zoomを週1回。2〜4か月目は週1回、30分と45分を交互に実施します（各時間は隔週）。',features:['週1回のZoomサポート／全16回',...commonPlanFeatures],note:'初月は45分。2〜4か月目は30分と45分を週ごとに交互に実施。'}
 ];
-export const standardOffer = Math.round(plans[1].price * .9);
+export const planScheduleText = plans.map(p=>`${p.name}プラン：${p.months}か月、${p.zoomSummary}。${p.schedule}`).join('\n');
 export const yen = (value:number) => value.toLocaleString('ja-JP');
 export const faqs = [
  ['運動が苦手でも参加できますか？','はい。現在の体力や運動経験に合わせて、無理のない方法から始められるようサポートします。'],

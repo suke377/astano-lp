@@ -167,3 +167,8 @@ p,li,summary{word-break:normal;overflow-wrap:break-word;line-break:strict;text-w
   .customer-case:not(.photo-case) .case-details section:nth-child(n+3){grid-row:5}
  }
 }
+
+/* Four current plans: keep the existing cards readable in a desktop 2 × 2 grid. */
+@media(min-width:741px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.plan-common-note{max-width:760px;margin-top:12px}
+.operations p{white-space:pre-line}
