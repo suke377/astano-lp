@@ -175,3 +175,9 @@ p,li,summary{word-break:normal;overflow-wrap:break-word;line-break:strict;text-w
 
 /* Plain upright, full-height numerals throughout numbered UI and results. */
 .reason-number,.future-list span,.flow li span,.faq summary span,.plan-price,.plan:last-child .plan-price,.offer-equation>span,.case-results dd,.past-story-results dd{font-family:Arial,"Helvetica Neue",sans-serif;font-style:normal;font-variant-numeric:lining-nums tabular-nums}
+
+/* A restrained, once-only entrance; no layout changes or scroll interception. */
+.scroll-reveal{transition:opacity .65s ease-out,transform .65s cubic-bezier(.2,.65,.3,1)}
+.scroll-reveal.reveal-pending{opacity:0;transform:translateY(18px)}
+@media(prefers-reduced-motion:reduce){.scroll-reveal,.scroll-reveal.reveal-pending{opacity:1;transform:none;transition:none}}
+@media print{.scroll-reveal,.scroll-reveal.reveal-pending{opacity:1;transform:none;transition:none}}

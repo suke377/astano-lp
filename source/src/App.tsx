@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useScrollReveal } from './useScrollReveal';
 import { identity, paymentTerms, counselingTerms, suspensionTerms, supportTerms } from './serviceTerms';
 import { CTA, Footer, Header, Heading, Media } from './components';
 import Hero from './Hero';
@@ -7,6 +8,7 @@ import { enrollmentFee, faqs, plans, planScheduleText, yen } from './content';
 const worries=['昔と同じ生活なのに、体重が増えてきた。','食事を減らしても、思うように変わらない。','運動を始めたいけれど、何から始めればいい？','家族を優先して、自分のことはいつも後回し。','何度も挑戦したけれど、続かなかった。'];
 const features=['食事写真からAIがカロリー・PFCを推定','推定値の確認・修正','体重・運動・水分摂取量・お通じの記録','体重や栄養のグラフ','運動解説動画','レシピ閲覧'];
 export default function App({review=false}:{review?:boolean}){
+ useScrollReveal();
  useEffect(()=>{
   // React mounts after the browser's first fragment lookup.
   const frame=requestAnimationFrame(()=>{
