@@ -25,5 +25,5 @@ export const assets = {
  voiceO:{file:'voice-o.png',label:'Oさん、40代女性・看護師。4か月で体重−7.6kg、ウエスト−8cm。対面トレーニング等の過去事例。',width:1536,height:1024},
  beforeAfter:{file:'before-after-am.png',label:'以前のサポートプログラムに参加されたA様・M様の承認済み結合Before／After画像。成果には個人差があります。',width:1536,height:1024},
  miya:{file:'miya.jpg',label:`${identity.role}${identity.trainer}の本人プロフィール写真`,width:3416,height:5120},
- marui:{file:'marui-profile.png',label:'管理栄養士・丸井遥さんの写真、資格、経歴、紹介文を含む承認済みプロフィール資料',width:1536,height:1024}
+ marui:{file:'marui-profile.png',label:'管理栄養士・丸井 遥さんの写真、資格、経歴、紹介文を含む承認済みプロフィール資料',width:1536,height:1024}
 } as const;
